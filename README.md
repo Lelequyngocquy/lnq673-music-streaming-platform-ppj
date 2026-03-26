@@ -6,27 +6,27 @@ I built this project to dive deep into building a media-heavy application from s
 
 ## What's Inside (Key Features)
 
-- **Seamless Audio Player:** A custom global music player built with React Context API (`PlayerContext`). [cite_start]You can play, pause, skip tracks, and seek through a song, and the music won't stop when you navigate to another page[cite: 307, 312, 353].
-- [cite_start]**Cloud Media Storage:** Integrated with **AWS S3** to fetch and stream audio files and images securely using Presigned URLs[cite: 30, 41].
-- **Smart "Recently Played" System:** The backend automatically tracks your listening history. [cite_start]It cleverly removes duplicate listens and limits your history to the 10 most recent tracks to keep the database optimized[cite: 57, 61, 64].
-- [cite_start]**Secure Authentication:** User sign-up and login are secured using **JWT (JSON Web Tokens)** and **Bcrypt** for password hashing[cite: 27, 29, 73, 75].
-- [cite_start]**Favorites & Library:** Users can easily add or remove songs from their "Favorites" and view their listening stats[cite: 218, 278].
-- [cite_start]**Dynamic Content:** Browse by Genres, Top Trending songs (based on view counts), and dedicated Artist Profiles[cite: 184, 276, 561].
+- **Seamless Audio Player:** A custom global music player built with React Context API (`PlayerContext`). [cite_start]You can play, pause, skip tracks, and seek through a song, and the music won't stop when you navigate to another page.
+- [cite_start]**Cloud Media Storage:** Integrated with **AWS S3** to fetch and stream audio files and images securely using Presigned URLs.
+- **Smart "Recently Played" System:** The backend automatically tracks your listening history. [cite_start]It cleverly removes duplicate listens and limits your history to the 10 most recent tracks to keep the database optimized.
+- [cite_start]**Secure Authentication:** User sign-up and login are secured using **JWT (JSON Web Tokens)** and **Bcrypt** for password hashing.
+- [cite_start]**Favorites & Library:** Users can easily add or remove songs from their "Favorites" and view their listening stats.
+- [cite_start]**Dynamic Content:** Browse by Genres, Top Trending songs (based on view counts), and dedicated Artist Profiles.
 
 ## Built With
 
 **Frontend:**
 
-- [cite_start]React.js (with React Router for navigation) [cite: 126, 130]
-- [cite_start]Axios (for API requests) [cite: 126]
-- [cite_start]Pure CSS (Custom responsive grid layouts and animations) [cite: 380, 387]
+- [cite_start]React.js (with React Router for navigation)
+- [cite_start]Axios (for API requests)
+- [cite_start]Pure CSS (Custom responsive grid layouts and animations)
 
 **Backend:**
 
-- [cite_start]Node.js & Express.js [cite: 116]
-- [cite_start]MySQL database with **Sequelize ORM** [cite: 1, 94]
-- [cite_start]Multer (for handling file uploads) [cite: 42]
-- [cite_start]AWS SDK (for S3 bucket interactions) [cite: 30]
+- [cite_start]Node.js & Express.js
+- [cite_start]MySQL database with **Sequelize ORM**
+- [cite_start]Multer (for handling file uploads)
+- [cite_start]AWS SDK (for S3 bucket interactions)
 
 ---
 
@@ -55,7 +55,7 @@ Start the backend server:
 \`\`\`bash
 npm start
 
-# [cite_start]The server will run on http://localhost:5000 [cite: 117]
+# [cite_start]The server will run on http://localhost:5000
 
 \`\`\`
 
