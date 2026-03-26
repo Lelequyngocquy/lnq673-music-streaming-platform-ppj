@@ -134,4 +134,6 @@ Building this project was a huge learning experience. Some of the biggest takeaw
 
 ---
 
+![Home Screen with no data](./images/home.png)
+
 _Designed and developed by [LNQ] - 2024._
