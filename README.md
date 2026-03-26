@@ -37,8 +37,8 @@ Want to run this locally? Follow these steps:
 ### 1. Clone the repository
 
 \`\`\`bash
-git clone https://github.com/yourusername/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Lelequyngocquy/lnq673-music-streaming-platform-ppj.git
+cd lnq673-music-streaming-platform-ppj
 \`\`\`
 
 ### 2. Set up the Backend (Server)
