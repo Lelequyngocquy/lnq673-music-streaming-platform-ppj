@@ -36,44 +36,48 @@ Want to run this locally? Follow these steps:
 
 ### 1. Clone the repository
 
-\`\`\`bash
+```bash
 git clone https://github.com/Lelequyngocquy/lnq673-music-streaming-platform-ppj.git
 cd lnq673-music-streaming-platform-ppj
-\`\`\`
+```
 
 ### 2. Set up the Backend (Server)
 
 Open a terminal and navigate to the server folder:
-\`\`\`bash
+
+```bash
 cd server
 npm install
-\`\`\`
+```
 
 Create a `.env` file in the `/server` directory and add your environment variables (see the template below).
 
 Start the backend server:
-\`\`\`bash
+
+```bash
 npm start
 
 # The server will run on http://localhost:5000
 
-\`\`\`
+```
 
 ### 3. Set up the Frontend (Client)
 
 Open a new terminal and navigate to the client folder:
-\`\`\`bash
+
+```bash
 cd client
 npm install
-\`\`\`
+```
 
 Start the React app:
-\`\`\`bash
+
+```bash
 npm start
 
 # The app will open in your browser at http://localhost:3000
 
-\`\`\`
+```
 
 ---
 
@@ -81,7 +85,7 @@ npm start
 
 To run the backend properly, you'll need to create a `.env` file in your `server` folder. **Never commit your actual AWS keys to GitHub!** Use this template:
 
-\`\`\`env
+```env
 
 # Database Configuration
 
@@ -100,13 +104,13 @@ AWS_REGION=ap-southeast-2
 AWS_BUCKET_NAME=your_bucket_name
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
-\`\`\`
+```
 
 ---
 
 ## Folder Structure
 
-\`\`\`text
+```text
 /
 ├── client/ # React Frontend
 │ ├── src/
@@ -120,7 +124,7 @@ AWS_SECRET_ACCESS_KEY=your_secret_key
 │ ├── uploads/ # Local fallback storage
 │ └── index.js # Server entry point
 └── README.md
-\`\`\`
+```
 
 ---
 
