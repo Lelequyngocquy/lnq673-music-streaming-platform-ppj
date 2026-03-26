@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment Variables (Quan trọng nhất)
+.env
+client/.env*
+server/.env
+
+# Production builds
+client/build/
+server/uploads/*
+!server/uploads/.gitkeep
+
+# OS rác
+.DS_Store
+Thumbs.db

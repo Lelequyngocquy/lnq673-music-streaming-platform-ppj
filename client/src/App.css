@@ -1,0 +1,1720 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Định nghĩa keyframes cho hiệu ứng rung */
+ @keyframes shake { 
+    0% { transform: translateX(0); } 
+    25% { transform: translateX(-2px); } 
+    50% { transform: translateX(2px); } 
+    75% { transform: translateX(-2px); } 
+    100% { transform: translateX(0);}
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+i{
+    color: #fff;
+    cursor: pointer;
+}
+
+img{
+    object-fit: cover;
+    object-position: top;
+    border-radius: 8px;
+}
+
+html,
+body{
+    height: 100vh;
+    background: linear-gradient(#050505, #18181d);
+    color: yellow;
+    
+}
+.container{
+    width: 100%;
+    display: grid;
+    background: linear-gradient(#050505, #18181d);
+}
+
+/* .container với grid layout */
+.container {
+display: grid;
+grid-template-columns: 1fr 4fr 2fr; /* 3 cột, Sidebar | Main | RightSection */
+grid-template-rows: auto 1fr;       /* Header ở trên, content phía dưới */
+grid-template-areas: 
+    "sidebar header right"           /* header nằm ở trên cùng, cột giữa */
+    "sidebar routes right";            /* Các phần còn lại: Sidebar, Main, RightSection */
+height: 100vh;
+}
+
+
+/* Sidebar */
+.container .sidebar {
+grid-area: sidebar;
+}
+
+/* Header */
+.container .main-header {
+grid-area: header;
+}
+
+/* Main Content */
+.container .routes {
+grid-area: routes;
+}
+
+/* Right Section */
+.container .right-section {
+grid-area: right;
+}
+
+
+
+.container .sidebar{
+    height: 100vh;
+    background-color: #18181d;
+    padding: 20px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    z-index: 10000;
+    transition: all 0.6s ease;
+}
+
+
+.container .sidebar .logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 23px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.container .sidebar .logo > i{
+    font-size: 30px;
+    transition: all 0.3s ease;
+    margin-right: 20px;
+}
+
+.container .sidebar .logo a{
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.container .sidebar .logo:hover .a,
+.container .sidebar .logo:hover i,
+.container .sidebar .menu ul li:hover .a,
+.container .sidebar .menu ul li:hover i,
+.container .main-header header .nav-links .a:hover{
+    color: #5773ff;
+    transform: scale(1.1); /* Phóng to 10% */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    
+}
+
+.container .sidebar .menu h5{
+    color: #919191;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.container .sidebar .menu ul{
+    list-style: none;
+
+}
+
+.container .sidebar .menu ul li{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.container .sidebar .menu ul li a {
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.container .sidebar .playing .top{
+    background-color: #32323d;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.container .sidebar .playing .top img{
+    width: 36px;
+    height: 36px;
+
+}
+
+.container .sidebar .playing .bottom{
+    background-color: #25252d;
+    border-radius: 0 0 6px 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.container .sidebar .playing .bottom i,
+.container .sidebar .playing .bottom p{
+    color:#919191;
+}
+
+
+.container .routes{
+    padding: 20px 36px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    color: #fff;
+    overflow: hidden;
+    overflow-y: auto;
+    -ms-overflow-style: none; /* Ẩn thanh cuộn trong IE và Edge */
+    scrollbar-width: none; /* Ẩn thanh cuộn trong Firefox */
+}
+
+.container .main-header {
+    padding: 20px 36px 0 36px; /* Giữ padding-top, padding-left và padding-right, loại bỏ padding-bottom */
+}
+
+.container .main-header header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.container .main-header header .nav-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container .main-header header .nav-links a{
+    text-transform: uppercase;
+    color: #919191;
+    transition: all 0.3 ease;
+}
+
+.container .main-header header .search{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 70%;
+    background-color: #1d1d1d;
+    border: 1px solid #464748;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.container .main-header header .search input{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+}
+
+.container main .trending{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    ;
+
+
+}
+.container main .trending .left .info{
+    margin-top: 12px;
+    padding: 26px;
+
+}
+
+.container main .trending .left .info h2{
+    font-size: 56px;
+    margin-bottom: 8px;
+}
+
+.container main .trending .left .info h4,
+.container main .trending .left .info h5{
+    display: inline;
+
+}
+
+.container main .trending .left .info h5{
+    margin-left: 12px;
+    color: #919191;
+}
+
+.container main .trending .left .info .buttons{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 16x;
+}
+
+.container main .trending .left .info .buttons button{
+    padding: 12px 16px;
+    background-color: #5773ff; 
+    border: none;
+    border-radius: 14px;
+    color: #fff;
+    font-weight: bold;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.container main .trending .left .info .buttons i{
+    
+    font-size: 20px;
+    border: 2px solid #fff;
+    padding: 10px;
+    border-radius: 50%;
+}
+.container main .trending .left .info .buttons button:hover{
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+
+.container main .trending img{
+    width: 300px;
+    height: 200px;
+}
+
+.container main .playlist{
+    margin-top: 14px;
+    display: flex;
+    gap: 20px;
+
+}
+
+.container main .playlist .genres{
+    color: #fff;
+    background-color: #202026;
+    padding: 20px;
+    border-radius: 6px;
+    width: 40%;
+    
+}
+
+.container main .playlist .genres .header,
+.container main .playlist .music-list .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.container main .playlist .genres .header .a,
+.container main .playlist .music-list .header .a{
+    color: #919191;
+    font-size: 12px;
+}
+.container main .playlist .genres .header .a:hover,
+.container main .playlist .music-list .header .a:hover{
+    text-decoration: underline;
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+
+
+}
+.container main .playlist .genres .items .item{
+    padding: 22px 10px;
+    align-items:center;
+    display:flex;
+    justify-content: start;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.container main .playlist .genres .items .item p{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container main .playlist .genres .items .item:nth-child(1) {
+    background: linear-gradient(to right, #476a8a 50%, rgb(12, 33, 107) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(1):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items .item:nth-child(2) {
+    background: linear-gradient(to right, #a69984 50%, rgb(68, 60, 36) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(2):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items .item:nth-child(3) {
+    background: linear-gradient(to right, #a24c34 50%, rgb(92, 21, 11) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(3):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items .item:nth-child(4) {
+    background: linear-gradient(to right, #0d4045 50%, rgb(7, 146, 67) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(4):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items .item:nth-child(5) {
+    background: linear-gradient(to right, #916881 50%, rgb(217, 28, 138) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(5):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+.container main .playlist .genres .items .item:nth-child(6) {
+    background: linear-gradient(to right, #5547a5 50%, rgb(107, 3, 123) 50%);
+    background-size: 200% 100%;
+    background-position: left;
+    transition: background-position 0.3s ease;
+}
+.container main .playlist .genres .items .item:nth-child(6):hover {
+    background-position: right; /* Trượt màu sang phải */
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+    transform: scale(1.05); /* Phóng to 5% */
+}
+
+
+.container main .playlist .music-list{
+    background-color: #202026;
+    padding: 20px;
+    color:#fff;
+    border-radius: 6px;
+    width: 65%;
+
+
+}
+
+.container main .playlist .music-list .items .item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.container main .playlist .music-list .items .item:hover{
+    transform: scale(1.03); /* Phóng to 3% */
+}
+
+.container main .playlist .music-list .items .item:last-child{
+    margin-bottom: 0;
+}
+
+.container main .playlist .music-list .items .item .info,
+.container main .playlist .music-list .items .item .actions{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+.container main .playlist .music-list .items .item .info p{
+    color: #919191;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 6px;
+
+}
+
+.container main .playlist .music-list .items .info img{
+    width: 50px;
+    height: 50px;
+}
+
+.container main .playlist .music-list .items .item .actions p{
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.container main .playlist .music-list .items .item .actions .icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #32323d;
+    padding: 6px;
+    border: 2px solid #464748;
+    border-radius: 6px;
+}
+
+.container main .playlist .music-list .items .item .actions .icon i{
+    font-size: 10px;
+    color: #5773ff;
+}
+
+.container main .playlist .music-list .items .item .actions i{
+    color: #919191;
+}
+
+
+
+.container .right-section{
+    padding: 20px 36px 20px 0;
+}
+
+.container .right-section .profile{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    margin-bottom: 40px;
+}
+.container .right-section .profile .user{
+    display: flex;
+}
+
+.container .right-section .profile .user .left{
+    display: flex;
+    align-items: center;
+    background: #32323d;
+    padding: 6px;
+    border-radius: 6px 0 0 6px;
+}
+
+.container .right-section .profile .user .left img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover; /* Cắt ảnh nhưng đảm bảo lấp đầy khung */
+    object-position: center; /* Căn ảnh vào trung tâm */
+  }
+
+.container .right-section .profile .user .right{
+    background-color: #25252d;
+    border-radius: 0 6px 6px 0;
+    padding: 13px;
+    color: #fff;
+}
+
+
+.container .right-section .music-player{
+    color: #fff;
+    background-color: #202026;
+    border-radius: 6px;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.container .right-section .music-player .top-section{
+    padding: 20px;
+    height: 86%;
+}
+
+.container .right-section .music-player .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.container .right-section .music-player .song-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+}
+
+.container .right-section .music-player .song-info img{
+    width: 280px;
+    height: 250px;
+    object-fit: cover; /* Cắt ảnh nhưng đảm bảo lấp đầy khung */
+    object-position: center; /* Căn ảnh vào trung tâm */
+}
+
+.container .right-section .music-player .description h3{
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom:8px ;
+}
+
+.container .right-section .music-player .description h5{
+    font-size: 16px;
+    margin-bottom: 4px;
+
+}
+
+.container .right-section .music-player .description p{
+    color: #919191;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.container .right-section .music-player .song-info .progress{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+
+}
+
+.container .right-section .music-player .song-info .progress p{
+    font-size: 11px;
+}
+
+.container .right-section .music-player .song-info .progress .active-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #5773ff;
+    border-radius: 4px;
+}
+
+
+
+.container .right-section .music-player .song-info .progress  .progress-bar {
+    position: relative;
+    width: 300px;
+    height: 8px;
+    background-color: #919191;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+.container .right-section .music-player .player-actions{
+    background-color: #476a8a;
+    height: 26%;
+    border-radius: 6px;
+    display: flex  ;
+    flex-direction: column;
+    align-items: center;
+    position: relative
+}
+
+.container .right-section .music-player .player-actions .buttons{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 24px;
+}
+
+.container .right-section .music-player .player-actions .buttons i{
+    font-size: 20px;
+}
+
+.container .right-section .music-player .player-actions .buttons .play-button{
+    padding: 16px;
+    background-color: #fff;
+    color: #575757;
+    border-radius: 18px;
+
+}
+
+.container .right-section .music-player .player-actions .lyrics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 8px;
+
+}
+
+.container .main-header header .nav-links button,
+.container .sidebar .logo button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d1d;
+    border: 1px solid #464748;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container .sidebar .logo .menu-btn,
+.container .main-header header .nav-links .menu-btn{
+    display: none;
+}
+
+@media screen and (max-width: 1400px){
+
+    .container .sidebar .playing .button p{
+        font-size: 10px;
+    }
+    .container .main-header header .search{
+        width: 50%;
+    }
+    .container main .trending .left .info h2{
+        font-size: 36px;
+    }
+    .container main .trending img{
+        width: 200px;
+        height: 180px;
+    }
+    .container main .playlist .genres{
+        width: 30%;
+    }
+
+    .container main .playlist .genres .items{
+        grid-template-columns: 1fr;
+    }
+
+    .container main .playlist .genres .items .item{
+        padding: 10px;
+    }
+    .container main .playlist .genres .items .item p{
+        font-size: 12px;
+    }
+    .container main .playlist .genres .items .item.item:nth-child(6),
+    .container main .playlist .music-list .items .item .info > p{
+        display: none;
+    }
+}
+@media screen and (max-width: 1200px){
+    .container .main-header header .search{
+        width: 40%;
+    }
+    .container main .trending .left .info h2{
+        font-size: 24px;
+    }
+    .container main .trending .left .info h5{
+        display: block;
+        font-size: 12px;
+        margin-left: 0;
+    }
+    .container main .trending .left .info .buttons button{
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+    .container main .trending .left .info .buttons button i{
+        font-size: 14px;
+    }
+    .container main .playlist .genres{
+        display: none;
+    }
+    .container main .playlist .music-list{
+        width: 100%;
+    }
+    .container .music-player{
+        height: 88%;
+    }
+    .container .music-player .song-info img{
+        width: 220px;
+        height: 220px;
+    }   
+    .container .music-player .song-info .description h3{
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width:992px){
+
+
+    .container .sidebar .logo .menu-btn,
+    .container .main-header header .nav-links .menu-btn{
+        display: block;
+    }
+    .container{
+        display: grid;
+        grid-template-columns: 3fr 2fr;  /* 2 cột, Main | RightSection */
+        grid-template-rows: auto 1fr;       /* Header ở trên, content phía dưới */
+        grid-template-areas: 
+        "header right"           /* header nằm ở trên cùng, cột giữa */
+        "routes right";            /* Các phần còn lại: Sidebar, Main, RightSection */
+        height: 100vh;
+    }
+
+    .container .main-header {
+        grid-column: 1;   /* Chỉ chiếm cột thứ 2 (cột giữa) */
+        grid-row: 1;      /* Nằm ở hàng 1, phía trên */
+    }
+
+
+    .container main {
+        grid-column: 1;   /* Main nằm ở cột 2 */
+        grid-row: 2;      /* Nằm ở hàng thứ 2 */
+    }
+
+    .container .right-section {
+        grid-column: 2;   /* RightSection nằm ở cột 3 */
+        grid-row: 1 / span 2;      /* Nằm ở hàng thứ 2 */
+    }
+
+
+
+    .container .sidebar{
+        position: absolute;
+        left: -100%;
+    }
+    .container .sidebar .playing{
+    display: none;
+    }
+    .container .main-header header .nav-links a{
+        font-size: 13px;
+    }
+    .container .main-header header .search{
+        width: 38px;
+    }
+    .container main .trending img{
+        width: 120px;
+        height: 100px;
+        margin-top: 66px;
+    }
+    .container main .playlist{
+        margin-top: 40px;
+    }
+        /* .container với grid layout */
+    
+ 
+}
+@media screen and (max-width:768px) {
+    .container{
+        display: grid;
+        grid-template-columns: 1fr; /* 1 cột, RightSection */
+        grid-template-rows: auto 1fr;       /* Header ở trên, content phía dưới */
+        grid-template-areas: 
+        "right"           /* header nằm ở trên cùng, cột giữa */
+        "right";            /* Các phần còn lại: Sidebar, Main, RightSection */
+        
+    }
+
+    /* Header chỉ chiếm cột giữa */
+    .container .main-header {
+        grid-column: 1;   /* Chỉ chiếm cột thứ 2 (cột giữa) */
+        grid-row: 1;      /* Nằm ở hàng 1, phía trên */
+    }
+
+    .container .right-section {
+        grid-column: 1;   /* RightSection nằm ở cột 3 */
+        grid-row: 2;      /* Nằm ở hàng thứ 2 */
+
+ 
+    }
+    .container .routes{
+        display: none;
+    }
+    .container .main-header header .search{
+        width: 30%;
+    }
+    .container .main-header header .search input{
+        display: block
+    }
+    .container .right-section{
+        padding: 20px 36px;
+    }
+    .container .right-section .profile{
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .container .right-section .music-player{
+        height: 100%;
+    }
+
+    .container .right-section .music-player .song-info img{
+        width: 300px;
+        height: 190px;
+    }
+}
+
+.zoom-hover1:hover{
+    transform: scale(1.1); /* Phóng to 10% */
+}
+.zoom-hover2:hover{
+    transform: scale(1.2); /* Phóng to 20% */
+}
+.zoom-hover3:hover{
+    transform: scale(1.3); /* Phóng to 30% */
+}
+.shake-hover:hover{
+    animation: shake 0.5s; /* Thêm hiệu ứng rung */
+}
+.underline-hover:hover{
+    text-decoration: underline;
+}
+.blue-hover:hover{
+    color: #5773ff;
+}
+.box-shadow{
+    box-shadow: 3px 3px #ffffff3d;
+}
+
+
+/* SONG DETAILS  */
+/* .routes .song-details{
+
+   
+} */
+
+.routes .song-details .song-info {
+    display: flex;
+    align-items: self-start;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Đưa các phần tử con xuống dòng khi tràn */
+   
+}
+.routes .song-details h2{
+    color: #919191;
+    margin-bottom: 20px;
+    font-size: 30px;
+    
+}
+
+
+
+.routes .song-details .song-info .left img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.routes .song-details .song-info .right {
+    flex: 1      
+}
+
+.routes .song-details .song-info .right h1 {
+    font-size: 45px;
+    margin-bottom: 8px;
+}
+
+.routes .song-details .song-info .right h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.routes .song-details .song-info .right h4 {
+    font-size: 16px;
+    color: #919191;
+    margin-top: 5px;
+}
+
+.routes .song-details .song-info .actions {
+    margin-top: 20px;
+}
+
+.routes .song-details .song-info .actions button {
+    padding: 12px 20px;
+    background-color: #5773ff;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.routes .song-details .song-info .actions .favourites-adding{
+    font-size: 25px;
+    
+    margin-left: 10px;
+}
+
+.routes .song-details .song-info .actions button:hover {
+    background-color: #405c9d;
+}
+
+.routes .song-details .artist-info{
+    margin-top: 20px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.routes .song-details .artist-info h3{
+    font-size: 30px;
+    margin-bottom: 8px;
+    margin-left: 20px;
+}
+
+.routes .song-details .artist-info p{
+    margin-left: 20px;
+    margin-top: 3px;
+    margin-bottom: 5px;
+    color: #919191;
+}
+
+
+/* Artist Profiles */
+.routes .artist-profile {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.routes .artist-profile .artist-info {
+    display: flex;
+    align-items: self-start;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Đưa các phần tử con xuống dòng khi tràn */
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng shadow */
+}
+
+.routes .artist-profile h2 {
+    color: #919191;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+}
+
+.routes .artist-profile .artist-info .left img {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.routes .artist-profile .artist-info .right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.routes .artist-profile .artist-info .right h1 {
+    font-size: 45px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.routes .artist-profile .artist-info .right h3 {
+    font-size: 24px;
+    color: #5773ff; /* Màu xanh làm nổi bật */
+    margin-bottom: 20px;
+}
+
+.routes .artist-profile .artist-info .right p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.routes .artist-profile .artist-info .right h4 {
+    font-size: 16px;
+    color: #919191;
+    margin-top: 5px;
+}
+
+.routes .artist-profile .actions {
+    margin-top: 20px;
+}
+
+.routes .artist-profile .actions button {
+    padding: 12px 20px;
+    background-color: #5773ff;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.routes .artist-profile .actions button:hover {
+    background-color: #405c9d;
+}
+
+
+/* Genre Songs */
+.routes .genre-songs {
+    padding: 20px;
+    text-align: center;
+}
+
+.routes .genre-songs h2{
+color: #919191;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.routes .genre-songs .songs-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: start;
+}
+
+.routes .song-card {
+    width: 200px;
+    text-align: center;
+    background: #32323d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.routes .song-card img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.routes .song-card .song-info {
+    padding: 10px;
+    
+}
+
+.routes .song-card .song-info h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.routes .song-card .song-info p{
+    color: #1d1d1d;
+}
+
+.routes .genres-list {
+    padding: 20px;
+    text-align: start;
+}
+
+.routes .genres-list h2 {
+color: #919191;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.routes .genres-list ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+.routes .genres-list ul li {
+    margin: 10px 0;
+}
+
+.routes .genres-list ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 5px;
+    display:flex;
+    justify-content: start;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.routes .genres-list ul li a:hover {
+    background-color: #18181d;
+    color:  rgb(187, 184, 184);
+
+}
+
+.routes .genres-list ul li a i{
+    margin-right: 5px;
+    margin-left: 20px;
+
+}
+
+
+/* Albums */
+.routes .albums-grid{
+    padding: 20px;
+    text-align: center;
+}
+
+.routes .albums-page h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #919191;
+}
+
+.routes .albums-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+    justify-content: center;
+}
+
+.routes .album-card {
+    background: #32323d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.routes .album-card:hover {
+    transform: scale(1.05);
+}
+
+.routes .album-card img {
+    width: 100%;
+    height: auto;
+}
+
+.routes .album-info {
+    padding: 10px;
+}
+
+
+.routes .album-info h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.routes .album-info p {
+    font-size: 15px;
+    color: #666;
+}
+
+
+.routes .artists-page {
+    padding: 20px;
+}
+.routes .artists-page h2{
+    color: #919191;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+  
+.routes .artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+  
+.routes .artist-card {
+    border: 1px solid #464748;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+  
+.routes .artist-card:hover {
+    transform: scale(1.05);
+}
+  
+.routes .artist-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+  
+.routes .artist-info {
+    padding: 15px;
+    text-align: center;
+}
+  
+.routes .artist-info h3 {
+    margin: 10px 0;
+}
+  
+.routes .artist-info .artist-country {
+    color: gray;
+    font-size: 14px;
+}
+  
+
+  
+
+
+
+/* Explore */
+.routes .explore-page {
+padding: 20px;
+}
+
+.routes .explore-section {
+margin-bottom: 10px;
+}
+
+.routes .explore-section h2{
+    color: #919191;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.routes .explore-section .scroll-container {
+display: flex;
+overflow-x: scroll;
+gap: 15px;
+padding: 10px 0;
+scroll-behavior: smooth; /* Tùy chọn để cuộn mượt mà */
+}
+
+.routes .explore-section .scroll-container::-webkit-scrollbar {
+height: 8px;
+
+}
+
+.routes .explore-section .scroll-container::-webkit-scrollbar-thumb {
+background-color: #343434;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.routes .explore-section .scroll-container::-webkit-scrollbar-track {
+background-color: #1f1f1f;
+}
+
+.routes .explore-section .item {
+flex: 0 0 auto;
+width: 250px;
+text-align: center;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+overflow: hidden;
+transition: transform 0.3s ease;
+cursor: pointer;
+}
+
+.routes .explore-section .item:hover {
+transform: translateY(-10px);
+}
+
+.routes .explore-section .item .cover, 
+.routes .explore-section .item .profile-cover {
+width: 200;
+height: 200px;
+object-fit: cover;
+}
+
+.routes .explore-section .item h3 {
+margin: 10px 0;
+font-size: 1.2rem;
+}
+
+.routes .explore-section .item p {
+font-size: 1rem;
+color: #777;
+margin-bottom: 10px;
+}
+
+
+/* Login */
+
+/* General container styles */
+.login-page {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #18181d;
+}
+
+/* Card styles */
+.login-page .login-card {
+background-color: #25252d;
+padding: 30px;
+border-radius: 6px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+width: 100%;
+max-width: 400px;
+}
+
+/* Heading styles */
+.login-page .login-card h2 {
+text-align: center;
+color: #5773ff;
+margin-bottom: 20px;
+font-size: 24px;
+}
+
+/* Error message styles */
+.login-page .error-message {
+color: red;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Input styles */
+.login-page .input-field {
+width: 100%;
+padding: 12px;
+border-radius: 5px;
+border: 1px solid #0f3460;
+background-color: #1a1a2e;
+color: #eaeaea;
+outline: none;
+margin-bottom: 20px;
+font-size: 14px;
+}
+.login-page .input-field:focus {
+border-color: #426cc0;
+}
+/* Button styles */
+.login-page .login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #5773ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+.login-page .login-button:hover{
+    background-color: #4a62dc
+}
+.login-page a{
+    color: #919191;
+text-decoration: none;
+font-size: 14px;
+text-align: center;
+display: block;
+margin-top: 10px;
+}
+
+.login-page a:hover{
+    text-decoration: underline;
+}
+
+
+/* SignUp */
+
+/* General container styles */
+.signup-page {
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100vh;
+background-color: #1a1a2e;
+}
+
+/* Card styles */
+.signup-page .signup-card {
+background-color: #16213e;
+padding: 30px;
+border-radius: 6px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+width: 100%;
+max-width: 400px;
+}
+
+/* Heading styles */
+.signup-page .signup-card h2 {
+text-align: center;
+color: #4ecca3;
+margin-bottom: 20px;
+font-size: 24px;
+}
+
+/* Error message styles */
+.signup-page .error-message {
+color: #e84545;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Success message styles */
+.signup-page .success-message {
+color: #4ecca3;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Input styles */
+.signup-page .input-field {
+width: 100%;
+padding: 12px;
+border-radius: 5px;
+border: 1px solid #0f3460;
+background-color: #1a1a2e;
+color: #eaeaea;
+outline: none;
+margin-bottom: 20px;
+font-size: 14px;
+}
+
+.signup-page .input-field:focus {
+border-color: #4ecca3;
+}
+
+/* Button styles */
+.signup-page .signup-button {
+width: 100%;
+padding: 12px;
+background-color: #4ecca3;
+color: #ffffff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+transition: background-color 0.3s ease;
+margin-bottom: 20px;
+}
+
+.signup-page .signup-button:hover {
+background-color: #3dbb91;
+}
+
+/* Link styles */
+.signup-page a {
+color: #4ecca3;
+text-decoration: none;
+font-size: 14px;
+text-align: center;
+display: block;
+margin-top: 10px;
+}
+
+.signup-page a:hover {
+text-decoration: underline;
+}
+.signup-page .signup-card p{
+    color: #919191;
+}
+
+
+/* UserProfile Page Styles */
+.user-profile {
+max-width: 700px;
+margin: 0 auto;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h2 {
+text-align: start;
+margin-bottom: 20px;
+font-size: 30px;
+color: #919191;
+}
+
+.user-profile .form-group {
+margin-bottom: 15px;
+}
+
+.user-profile label {
+font-weight: bold;
+display: block;
+margin-bottom: 5px;
+color: #919191;
+}
+
+.user-profile input[type="text"],
+.user-profile input[type="email"],
+.user-profile input[type="file"] {
+width: 100%;
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #919191;
+border-radius: 4px;
+background-color: #050505;
+color: #fff;
+font-size: large;
+}
+
+
+.user-profile button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+width: 100%;
+margin-top: 15px;
+}
+
+.user-profile button:hover {
+background-color: #45a049;
+}
+
+.user-profile .logout-section {
+margin-top: 20px;
+text-align: center;
+}
+
+.user-profile .logout-button {
+background-color: #f44336;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+.user-profile .logout-button:hover {
+background-color: #e53935;
+}
+
+.user-profile .error {
+color: red;
+margin-bottom: 15px;
+}
+
+.user-profile  .avatar-preview {
+width: 150px;
+height: 150px;
+object-fit: cover; /* Cắt ảnh nhưng đảm bảo lấp đầy khung */
+object-position: center; /* Căn ảnh vào trung tâm */
+}
+  
+
+/* Favourites */
+.routes .favourites-page {
+    padding: 20px;
+}
+
+.routes .favourites-page h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #919191;
+}
+
+.routes .favourites-page .favourites-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Spacing between cards */
+    justify-content: center;
+}
+
+.routes .favourites-page .favourite-item {
+    background: #32323d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.routes .favourites-page .favourite-item:hover {
+    transform: scale(1.05);
+}
+
+.routes .favourites-page .favourite-item img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.routes .favourites-page .info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.routes .favourites-page .info p {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+
+/* Recents */
+.routes .recents-page {
+    padding: 20px;
+}
+
+.routes .recents-page h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #919191;
+}
+
+.routes .recents-page .recents-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px; /* Spacing between cards */
+    justify-content: center;
+}
+
+.routes .recents-page .recents-list .recent-item {
+    background: #32323d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.routes .recents-page .recents-list .recent-item:hover {
+    transform: scale(1.05);
+}
+
+.routes .recents-page .recents-list .recent-item img {
+    width: 100%;
+    height: auto;
+}
+
+
+.routes .recents-page .recents-list .info h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.routes .info p {
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 10px;
+}   
+

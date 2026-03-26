@@ -1,0 +1,125 @@
+
+.sidebar{
+    height: 100vh;
+    background-color: #18181d;
+    padding: 20px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10000;
+    transition: all 0.3s ease;
+}
+
+.sidebar .logo{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sidebar .logo > i{
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.sidebar .logo .a{
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.sidebar .logo .a:hover,
+.sidebar .logo i:hover,
+.sidebar .menu ul li:hover .a,
+.sidebar .menu ul li:hover i{
+    color: #5773ff;
+}
+
+.sidebar .menu h5{
+    color: #919191;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.sidebar .menu ul{
+    list-style: none;
+}
+
+.sidebar .menu ul li{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+
+}
+
+.sidebar .menu ul li .a{
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.sidebar .playing .top{
+    background-color: #32323d;
+    border-radius: 6px 6px 0 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.sidebar .playing .top img{
+    width: 36px;
+    height: 36px;
+}
+
+.sidebar .playing .bottom{
+    background-color: #25252d;
+    border-radius: 0 0 6px 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+}
+
+.sidebar .playing .bottom i,
+.sidebar .playing .bottom p{
+    color: #919191;
+}
+
+.sidebar .logo button{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d1d1d;
+    border: 1px solid #464748;
+    font-size: 20px;
+    padding: 4px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:1400px) {
+    .sidebar .playing .bottom p{
+        font-size: 10px;
+    }
+}
+@media screen and (max-width:992px) {
+    .sidebar{
+        left: -100%;
+        position: absolute;
+    }
+    .sidebar .playing{
+        display: none;
+    }
+    .sidebar .logo button{
+        display: block;
+    }
+}
+
+
+
